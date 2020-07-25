@@ -28,7 +28,7 @@
         ]);
 
         var options = {
-          title: 'Stats'
+          title: ''
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -36,6 +36,32 @@
         chart.draw(data, options);
       }
     </script>
+    
+    <script language = "JavaScript">
+        function drawChart() {
+           // Define the chart to be drawn.
+           
+           var cc = ["Age of Patient", "Less than 20 yrs", "20-40 yrs", "40-60 yrs", "60-80 yrs", "more than 80 yrs"];
+           var bb = ["Number of positive cases", parseInt("{{p}}"), parseInt("{{q}}"), parseInt("{{r}}"), parseInt("{{s}}"), parseInt("{{t}}")]
+           var data = google.visualization.arrayToDataTable([
+              cc,
+              bb
+           ]);
+
+           
+
+           var options = {
+               'title':''
+            };
+           // Instantiate and draw the chart.
+           var chart = new google.visualization.BarChart(document.getElementById('container'));
+           
+           chart.draw(data, options);
+           
+        }
+        google.charts.setOnLoadCallback(drawChart);
+     </script>
+
     <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
     <style>
         #input {
@@ -199,6 +225,8 @@
                         </div> -->
                     </div>
                 </section>
+                
+                <div id = "container" style = "width: 1600px; height: 900px; margin: 0 auto"></div>
                 
                 <div id="piechart" style="width: 1600px; height: 900px;"></div>
 
