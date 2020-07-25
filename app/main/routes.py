@@ -18,6 +18,40 @@ from PIL import Image, ImageOps
 np.set_printoptions(suppress=True)
 model = tensorflow.keras.models.load_model('keras_model.h5')
 
+import pyrebase
+
+config = {
+  "apiKey": "AIzaSyBs6Byg5HK_dlFOSIcmcjsjEyI8zceppYM",
+  "authDomain": "med-detect.firebaseapp.com",
+  "databaseURL": "https://med-detect.firebaseio.com",
+  "storageBucket": "med-detect.appspot.com"
+}
+
+firebase = pyrebase.initialize_app(config)
+
+
+db = firebase.database()
+def add_patient(k):
+    db.push({"date":k[0], "firstname":k[1], "lastname":k[2], "age":k[3], "height":k[4], "weight":k[5], "diagnosis":k[6], "prob":k[7]})
+
+def get_patients():
+    x = db.get().val()
+    final = []
+    for i in x:
+        final.insert(0, [x[i]['date'], x[i]['firstname'], x[i]['lastname'], x[i]['age'], x[i]['height'], x[i]['weight'], x[i]['diagnosis'], x[i]['prob']])
+    return final
+
+def get_numbers():
+    a = 0
+    b = 0
+
+    for i in get_patients():
+        if i[6] == "Uninfected":
+            a += 1
+        else:
+            b += 1
+    return [a, b]
+
 @main.route('/forum', methods=['GET', 'POST'])
 def index2():
     """Login form to enter a room."""
