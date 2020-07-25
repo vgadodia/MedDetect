@@ -1,7 +1,8 @@
+### Features work best when run locally. In order to do this, `cd` into the project directory, and do `flask run`.
+
+
 # MalariaDiagnosis
 A machine learning disease detection and user management system for hospitals and medical clinics to instantly diagnose diseases such as malaria from blood samples, with high accuracy.
-
-#### Features work best when run locally. In order to do this, `cd` into the project directory, and do `flask run`.
 
 ## Inspiration
 According to the WHO, malaria is among the top 10 deadliest diseases in low income nations, causing over 405,000 deaths worldwide in 2018 alone. The major cause of this is lack of infrastructure and human resource required to treat this disease. We believe that machine learning can be used to combat this global issue and improve the efficiency of the healthcare system, and reduce the dependence on human resources.
