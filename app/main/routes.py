@@ -51,7 +51,23 @@ def get_numbers():
         else:
             b += 1
     return [a, b]
+def get_age_data():
+    k = get_patients()
+    final = [0, 0, 0, 0, 0]
 
+    for i in k:
+        if i[6] == "Parasitized":
+            if int(i[3]) < 20:
+                final[0] += 1
+            elif int(i[3]) >= 20 and int(i[3]) < 40:
+                final[1] += 1
+            elif int(i[3]) >= 40 and int(i[3]) < 60:
+                final[2] += 1
+            elif int(i[3]) >= 60 and int(i[3]) < 80:
+                final[3] += 1
+            else:
+                final[4] += 1
+    return final
 @main.route('/forum', methods=['GET', 'POST'])
 def index2():
     """Login form to enter a room."""
@@ -88,7 +104,8 @@ def upload():
 @main.route('/trends')
 def trends():
     k = get_numbers()
-    return render_template('trends.html', a = k[0], b = k[1])
+    k1 = get_age_data()
+    return render_template('trends.html', a = k[0], b = k[1], p = k1[0], q = k1[1], r = k1[2], s = k1[3], t = k1[4])
 
 
 @main.route('/download', methods=["GET", "POST"])
