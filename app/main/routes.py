@@ -110,8 +110,6 @@ def trends():
 
 @main.route('/download', methods=["GET", "POST"])
 def download():
-    data = get_patients()
-    
     return redirect("/portfolio")
 
 @main.route('/upload', methods=['GET', 'POST'])
