@@ -90,6 +90,13 @@ def trends():
     k = get_numbers()
     return render_template('trends.html', a = k[0], b = k[1])
 
+
+@main.route('/download', methods=["GET", "POST"])
+def download():
+    data = get_patients()
+    
+    return redirect("/portfolio")
+
 @main.route('/upload', methods=['GET', 'POST'])
 def getupload():
     if request.method == "POST":

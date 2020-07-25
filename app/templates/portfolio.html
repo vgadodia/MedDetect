@@ -69,10 +69,12 @@
         }
 
         #upload-button {
-            background-color: transparent;
+            background-color: #6c7ae0;
+            color: white;
         }
         #upload-button:hover {
-            background-color: white;
+            background-color: transparent;
+            color: #6c7ae0;
         }
 
         body {
@@ -168,6 +170,13 @@
                                     <h2 style="margin-top: -50px;">Patient Information.</h2>
                                     <!-- <p>We designed and tested prototypes that helped identify pain points in the account
                                         creation process. Together, we shaped the new standard.</p> -->
+                                    <div class="cta-content" >
+                                        <form action="/download" method="POST" enctype="multipart/form-data">
+                                            <div class="cta-btn">
+                                                <button type="submit" class="btn btn-outlined--white btn-with-icon btn-height-60" id="upload-button">Download Data</button>
+                                            </div>
+                                        </form>         
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -178,7 +187,7 @@
                     </div>
                 </section>
                 
-                <div class="container" style="margin-left:250px;margin-top:-100px;">
+                <div class="container" style="margin-left:250px;margin-top:-120px;">
                     <table>
                         <thead>
                             <tr>
@@ -225,6 +234,57 @@
     <script src="{{ url_for('static', filename='plugins/meanmenu/jquery.meanmenu.js') }}"></script>
     <script src="{{ url_for('static', filename='js/active.js') }}"></script>
     <script src="{{ url_for('static', filename='js/custom-file-input.js') }}"></script>
+
+    <script>
+        function download_csv(csv, filename) {
+            var csvFile;
+            var downloadLink;
+
+            // CSV FILE
+            csvFile = new Blob([csv], {type: "text/csv"});
+
+            // Download link
+            downloadLink = document.createElement("a");
+
+            // File name
+            downloadLink.download = filename;
+
+            // We have to create a link to the file
+            downloadLink.href = window.URL.createObjectURL(csvFile);
+
+            // Make sure that the link is not displayed
+            downloadLink.style.display = "none";
+
+            // Add the link to your DOM
+            document.body.appendChild(downloadLink);
+
+            // Lanzamos
+            downloadLink.click();
+        }
+
+        function export_table_to_csv(html, filename) {
+            var csv = [];
+            var rows = document.querySelectorAll("table tr");
+            
+            for (var i = 0; i < rows.length; i++) {
+                var row = [], cols = rows[i].querySelectorAll("td, th");
+                
+                for (var j = 0; j < cols.length; j++) 
+                    row.push(cols[j].innerText);
+                
+                csv.push(row.join(","));		
+            }
+
+            // Download CSV
+            download_csv(csv.join("\n"), filename);
+        }
+
+        document.querySelector("button").addEventListener("click", function () {
+            var html = document.querySelector("table").outerHTML;
+            export_table_to_csv(html, "patient_data.csv");
+        });
+
+    </script>
 
 </body>
 </html>
