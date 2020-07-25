@@ -1,0 +1,4 @@
+0 Bad Segmentation
+1 Parasitized
+2 Uninfected
+3 Unknown / Weird
