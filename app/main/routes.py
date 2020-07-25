@@ -65,7 +65,7 @@ def get_age_data():
                 final[2] += 1
             elif int(i[3]) >= 60 and int(i[3]) < 80:
                 final[3] += 1
-            else:
+            elif int(i[3]) >= 80:
                 final[4] += 1
     return final
 @main.route('/forum', methods=['GET', 'POST'])
