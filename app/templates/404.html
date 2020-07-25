@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Med Check</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap-4.3.1/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-1.8.1/slick.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/meanmenu/meanmenu.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/ep-icon-fonts/css/ep-font.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome-5/css/all.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/component.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}"/>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="landing-wrapper">
+        <header class="site-header">
+            <div class="container">
+                <div
+                  class="row justify-content-center align-items-center position-relative">
+                  <div class="col-sm-4 col-6 col-lg-2 col-xl-2 order-lg-1">
+                    <div class="brand">
+                        <a href="/"><img width="175" style="margin-left: 20px;" src="{{ url_for('static', filename='image/med-detect-reallogo.png') }}"/></a>
+                    </div>
+                  </div>
+                  <div
+                    class="col-sm-7 col-lg-3 col-xl-3 offset-xl-1 d-none d-sm-block order-lg-3"
+                  >
+                  </div>
+                  <div
+                    class="col-sm-1 col-6 col-lg-7 col-xl-6 position-static order-lg-2"
+                  >
+                    <div class="main-navigation">
+                        <ul class="main-menu">
+                            <li class="menu-item">
+                              <a href="/">Home</a>
+                            </li>
+                            <li class="menu-item"><a href="/upload">Upload</a></li>
+                            <li class="menu-item">
+                              <a href="/gethelp">Portfolio</a>
+                            </li>
+                            <li class="menu-item">
+                              <a href="/forum">Forum</a>
+                            </li>
+                          </ul>
+                    </div>
+                    <div class="mobile-menu"></div>
+                  </div>
+                </div>
+              </div>
+        </header>
+        <div class="hero-area pt-4 pt-lg-5">
+            <div class="float-shapes">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center justify-content-lg-start">
+                    <div class="col-md-8 col-lg-7 offset-lg-2">
+                        <h1 class="main-title">404 Error</h1>
+                    </div>
+                    <div class="col-md-8 col-lg-6 offset-lg-2">
+                        <div class="hero-content-wrapper">
+                            <div class="main-content">
+                                <p>Something went wrong. Try going back to the home page <a href="/" style="color:#258aff;">here</a>.
+                                </p>
+                            </div>
+                            <!-- <div class="compatible">
+                                <span>Compitable with:</span>
+                                <ul class="compatible-list">
+                                    <li class="list-item"><img src="image/compatible-1.png" alt=""></li>
+                                    <li class="list-item"><img src="image/compatible-2.png" alt=""></li>
+                                    <li class="list-item"><img src="image/compatible-3.png" alt=""></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="hero-img">
+                            <!-- <img src="image/laptop-image.png" alt=""> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="footer-section" style="margin-top: 300px;">
+            <div class="container">
+                <div class="row align-items-center text-center">
+                    <div class="col-lg-2 col-md-3 ">
+                        <div class="footer-logo">
+                            <a href="/"><img src="{{ url_for('static', filename='image/main-logo-bright.png') }}" alt=""/></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6  offset-lg-1">
+                        <ul class="nav footer-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/upload">Upload</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/portfolio">Portfolio</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/trends">Trends</a>
+                              </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/forum">Forum</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="/analytics">Analytics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contact">Contact</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <!-- <div class="col-lg-2 col-md-3 offset-lg-1">
+                        <ul class="footer-social-list">
+                            <li>
+                                <a href="">
+                                    <i class="icon icon-logo-fb-simple"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="icon icon-logo-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="icon icon-google"></i>
+                                </a>
+                            </li>
+                        </ul> 
+                    </div> -->
+                </div>
+                <div class="copyright">
+                    <p>©2020 Med Check. All rights reserved. </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/jquery/jquery-migrate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/bootstrap-4.3.1/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/slick-1.8.1/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/meanmenu/jquery.meanmenu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/active.js') }}"></script>
+</body>
+</html>

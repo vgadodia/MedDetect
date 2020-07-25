@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Med Check</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/bootstrap-4.3.1/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-1.8.1/slick.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugins/meanmenu/meanmenu.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/ep-icon-fonts/css/ep-font.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome-5/css/all.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/component.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}"/>
+    <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+    <style>
+        #input {
+            border: 3px solid white; 
+            -webkit-box-shadow: 
+            inset 0 0 8px  rgba(0,0,0,0.1),
+                  0 0 16px rgba(0,0,0,0.1); 
+            -moz-box-shadow: 
+            inset 0 0 8px  rgba(0,0,0,0.1),
+                  0 0 16px rgba(0,0,0,0.1); 
+            box-shadow: 
+            inset 0 0 8px  rgba(0,0,0,0.1),
+                  0 0 16px rgba(0,0,0,0.1); 
+            padding: 15px;
+            background: rgba(255,255,255,0.5);
+            background-color: #258aff;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            font-size: 16px;
+            width: 500px;
+            color: white;
+        }
+
+        ::placeholder {
+            font-size: 16px;
+            padding-top:3px;
+            color:rgba(255, 255, 255, 0.5);
+        }
+
+        @media only screen and (max-width: 768px) {
+            #input {
+                width: 250px;
+            }
+        } 
+
+        @media only screen and (max-width: 600px) {
+            #loginHamburger {
+                visibility: show;
+            }
+            #registerHamburger {
+                visibility: show;
+            }
+        }
+        
+        @media only screen and (min-width: 600px) {
+            #loginHamburger {
+                display: none;
+            }
+            #registerHamburger {
+                display: none;
+            }
+        }
+
+        #upload-button {
+            background-color: transparent;
+        }
+        #upload-button:hover {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-wrapper">
+            <header class="site-header">
+                    <div class="container">
+                        <div class="row justify-content-center align-items-center position-relative">
+                            <div class="col-sm-4 col-6 col-lg-2 col-xl-2 order-lg-1">
+                                <div class="brand">
+                                    <a href="/"><img width="175" style="margin-left: 20px;" src="{{ url_for('static', filename='image/med-detect-reallogo.png') }}"/></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-7 col-lg-3 col-xl-3 offset-xl-1 d-none d-sm-block order-lg-3">
+                                <div class="header-btns">
+                                  <div class="btn-1 btn-outlined" {{ loginStatus }}><a>Login</a></div>
+                                  <div class="btn-2" {{ loginStatus }} style="background-color: #48bbed;"><a>Sign Up</a></div>
+                                  <!-- <div class="btn-2" {{ logoutStatus }}><a href="/logout">Log Out</a></div> -->
+                              </div>
+                            </div>
+                            <div class="col-sm-1 col-6 col-lg-7 col-xl-6 position-static order-lg-2">
+                                <div class="main-navigation">
+                                    <ul class="main-menu">
+                                        <li class="menu-item "><a href="/">Home</a></li>
+                                        <li class="menu-item "><a href="/upload" style="color:#48bbed;">Upload</a></li>
+                                          <li class="menu-item">
+                                            <a href="/portfolio">Portfolio</a>
+                                          </li>
+                                          <li class="menu-item">
+                                            <a href="/trends">Trends</a>
+                                          </li>
+                                          <li class="menu-item">
+                                            <a href="/forum">Forum</a>
+                                          </li>
+                                        </ul>
+                                </div>
+                                <div class="mobile-menu"></div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <section class="testimonial-section">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="section-title">
+                                    <h2 style="margin-top: -50px;">Hey there, please fill out the patient information and upload an image of the red blood cells scan.</h2>
+                                    <!-- <p>We designed and tested prototypes that helped identify pain points in the account
+                                        creation process. Together, we shaped the new standard.</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="section-title">
+                            We designed and tested prototypes that helped identify pain points in the account
+                            creation process. Together, we shaped the new standard
+                        </div> -->
+                    </div>
+                </section>
+        <section class="cta-section" style="margin-top:-100px;margin-bottom:100px;">
+            <div class="container" >
+                <div class="cta-inner-wrapper" style="background-color: #48bbed;">
+                    <div class="row justify-content-center" >
+                        <div class="col-xl-7 col-lg-8">
+                            <div class="cta-content" >
+                                <!-- <span class="title-small-text">Ready to take action?</span> -->
+                                <!-- <h2>Upload an image of the text or copy and paste it in the text box.</h2> -->
+                                <p>We use an advanced machine learning algorithm to analyze the image and provide you with high quality results with over 90% accuracy.</p>
+                                <form action="/upload" method="POST" enctype="multipart/form-data">
+                                    <div class="container" style="margin-bottom:-120px;margin-top: -100px;">
+                                        <div class="content" >
+                                            <div class="box" style="margin-top: 30px;">
+                                                <p class="extra-info-text" style="font-weight: 900;margin-top:25px;">Enter patient information.</p>
+                                                <div style="margin-top:20px;">
+                                                    <p class="extra-info-text" style="font-weight: 500;">Enter name of patient.</p>
+                                                    <div>
+                                                        <input style="width:150px;" id="input" type="text" name="firstname" placeholder="First name"></input>
+                                                        <input style="width:150px;margin-left:10px;" id="input" type="text" name="lastname" placeholder="Last name"></input>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+
+                                                        <p class="extra-info-text" style="font-weight: 500;">Enter age.</p>
+                                                        <input style="width:150px;" id="input" type="text" name="age" placeholder="Age"></input>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+
+                                                        <p class="extra-info-text" style="font-weight: 500;">Enter height and weight.</p>
+                                                        <input style="width:150px;" id="input" type="text" name="height" placeholder="Height (cm)"></input>
+                                                        <input style="width:150px;margin-left:10px;" id="input" type="text" name="weight" placeholder="Weight (lb)"></input>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <br><br>
+                                                <p class="extra-info-text" style="font-weight: 500;">Upload image of scan.</p>
+                                                <input type="file" name="memory" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple />
+                                                <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a file&hellip;</span></label>
+                                                <p class="extra-info-text" style="font-weight:500;font-size:16px;color:red;">{{ errorMessage }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cta-btn">
+                                        <button type="submit" class="btn btn-outlined--white btn-with-icon btn-height-60" id="upload-button">Upload</button>
+                                        <!-- <p class="extra-info-text">No credit card required</p> -->
+                                    </div>
+                                </form>         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <section class="footer-section">
+            <div class="container">
+                <div class="copyright">
+                    <p>©2020 Med Check. All rights reserved. </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/jquery/jquery-migrate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/bootstrap-4.3.1/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/slick-1.8.1/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='plugins/meanmenu/jquery.meanmenu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/active.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom-file-input.js') }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,229 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+/* Reset CSS */
+@import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1:100,200,300,400,500,600,700,800,900&display=swap');
+// font-family: 'Gothic A1', sans-serif;
+// font-family: 'Karla', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    color: #1f1f1f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    font-weight:700;
+}
+
+a,
+span {
+    display: inline-block;
+}
+
+a {
+    transition: 0.4s;
+    color: inherit;
+    &:focus {
+        outline: none !important;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+    
+    &:visited {
+        text-decoration: none;
+    }
+    
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    line-height: 26px;
+    font-size: 15px;
+    &.lg{
+        font-size: 16px;
+    }
+    &.sm{
+        font-size: 12px;
+    }
+    @include tablet {
+        line-height: 32px;
+    }
+}
+span{
+    font-size: 12px;
+}
+
+.btn:focus,
+.btn:active {
+    box-shadow: none;
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+.card {
+    border: none;
+    border-radius: 0;
+}
+
+/* Slick Slider Resets */
+
+.slick-slide {
+    &:focus {
+        outline: none;
+        a {
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+/* Common Classes */
+
+.section-padding{
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+/* Typography */ 
+.title-large{
+    font-size: 38px;
+}
+.title-mid{
+    font-size: 21px;
+}
+
+/* Background Image */
+.bg-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Buttons */
+
+.btn{
+    font-family: 'Karla', sans-serif;
+    letter-spacing: -1.12px;
+    font-weight: 700;
+    font-size: 18px;
+    transition: .4s;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    
+    &--primary{
+        background-color: $primary-color;
+        color: #FFF;
+        &:hover {
+            background-color: rgba($primary-color,.8);
+            color: #fff;
+        }
+    }
+    &-outlined--primary{
+        background-color: transparent;
+        color: $primary-color;
+        border: 2px solid $primary-color;
+        &:hover {
+            background-color: rgba($primary-color,1);
+            color: #fff;
+        }
+    }
+    &-outlined--white {
+        color: #fff;
+        border: 2px solid #fff;
+        &:hover {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+    }
+    &-height-60{
+        height: 60px;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+}
+
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+/* Margin  */
+
+.mb-d-30 {
+    margin-bottom: -30px;
+}
+
+.mb--30{
+    margin-bottom: 30px;
+}
+
+.mb--65 {
+    margin-bottom: 65px;
+  }
+
+.rotate-45 {
+    transform: rotate(45deg);
+}
+
+.form-control{
+    &:focus{
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,48 @@
+.btn--toggle-03 {
+    justify-content: flex-end;
+    height: 100%;
+    p {
+        color: #fff;
+    }
+    p:last-child {
+        padding-right: 0;
+    }
+}
+
+
+.btn--toggle-04 {
+    // display: inline-flex;
+    // border-radius: 32px;
+    // border: 1px solid #e5e5e5;
+    // padding: 16px 20px;
+    // background-color: #f6f6f6;
+    // p:first-child {
+    //     padding-left: 0;
+    // }
+}
+
+
+
+    
+.btn--toggle-06 {
+    display: inline-flex;
+    border-radius: 32px;
+    border: 1px solid #e5e5e5;
+    padding: 16px 20px;
+    background-color: #f6f6f6;
+    p:first-child {
+        padding-left: 0;
+    }
+}
+
+
+.btn--toggle-02 {
+    justify-content: flex-start;
+    height: 100%;
+    p {
+        color: #000;
+    }
+    p:last-child {
+        padding-right: 0;
+    }
+}
